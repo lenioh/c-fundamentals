@@ -1,12 +1,12 @@
 #include <stdio.h>
 
+int square(int n) {
+    return n * n;
+}
+
 int main(void) {
     int n;
     scanf("%d", &n);
-
-    int sum = 0;
-    while (n) { sum += n--; }
-
-    printf("%d\n", sum);
+    printf("%d\n", square(n));
     return 0;
 }
