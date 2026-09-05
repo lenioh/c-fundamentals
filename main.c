@@ -1,17 +1,20 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
-    int nums[5];
-    for (int i = 0; i < 5; i++) scanf("%d", &nums[i]);
+    char buf[100];
+    fgets(buf, sizeof buf, stdin);
 
-    int best = nums[0];
+    int n = sizeof buf;
 
-    for (int i = 1; i < 5; i++) {
-        if (nums[i] > best) {
-            best = nums[i];
+    for (int i = 0; i < n; i++) {
+        if (buf[i] == '\n') {
+            buf[i] = '\0';
+            break;
         }
     }
 
-    printf("%d\n", best);
+    printf("%zu\n", strlen(buf));
     return 0;
 }
+
